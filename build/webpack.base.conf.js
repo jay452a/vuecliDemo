@@ -10,7 +10,8 @@ function resolve (dir) {
 console.log(resolve('src'),'********')
 module.exports = {
   entry: {
-    'main': './src/main.js'  // 打包出来的filename为key值
+    'main': './src/module/front/main.js',  // 打包出来的filename为key值
+    'back': './src/module/back/main.js'
   },
   output: {
     path: config.build.assetsRoot,

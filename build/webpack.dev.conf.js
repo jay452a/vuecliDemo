@@ -25,11 +25,22 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: './app/index.html',  //配置虚拟访问路径
-      template: './src/index.html',  //模板所在路径
-      inject: true
-    }),
+    new HtmlWebpackPlugin(
+      {
+        filename: 'index.html',  //配置虚拟访问路径
+        template: './src/module/front/index.html',  //模板所在路径
+        inject: true,
+        chunks:['main']
+      }
+    ),
+    new HtmlWebpackPlugin(
+      {
+        filename: './back/index.html',  //配置虚拟访问路径
+        template: './src/module/back/index.html',  //模板所在路径
+        inject: true,
+        chunks:['back']
+      }
+    ),
     new FriendlyErrorsPlugin()
   ]
 })
