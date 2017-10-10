@@ -5,7 +5,7 @@ var vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
   console.log(__dirname,dir)
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, '../'+dir) // ../相当于cd ..
 }
 console.log(resolve('src'),'********')
 module.exports = {
@@ -24,7 +24,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'frontView': resolve('src/module/front/view'),
+      'style':resolve('src/style')
     }
   },
   module: {

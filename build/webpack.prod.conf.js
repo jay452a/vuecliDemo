@@ -49,6 +49,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
+    // 多页面打包
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: './src/module/front/index.html',
@@ -62,6 +63,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency',
+      //  chunks指定打包之后的页面引用哪些JS
       chunks: ['main','manifest','vendor']
     }),
     new HtmlWebpackPlugin({

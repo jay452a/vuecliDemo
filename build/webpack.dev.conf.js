@@ -27,7 +27,7 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin(
       {
-        filename: 'index.html',  //配置虚拟访问路径
+        filename: './index.html',  //输出路径
         template: './src/module/front/index.html',  //模板所在路径
         inject: true,
         chunks:['main']
