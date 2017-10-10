@@ -10,7 +10,7 @@
 <style lang="scss" scoped>
   @import '../../../style/public';
   img{
-    width: 5rem;
+    width:10rem
   }
   .testfont{
     @include font-dpr(22px)

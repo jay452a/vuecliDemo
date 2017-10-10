@@ -1,7 +1,13 @@
-@mixin font-dpr($size){
+$base-size:10vw;
+@mixin font-dpr($size){ //字体使用font-size
   font-size: $size;
   [data-dpr='2'] & {font-size: $size * 2;}
   [data-dpr='3'] & {font-size: $size * 3;}
 }
+@function px2rem($size){
+  @return $size/$base-size
+}
+
+
 
 
